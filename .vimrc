@@ -1,13 +1,3 @@
-"=======================================================
-" FILENAME: .vimrc
-" AUTHOR  : Kevin Chen
-" DATE    : 2013-09-23
-"=======================================================
-
-"-------------------------------------------------------
-" misc
-"-------------------------------------------------------
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "execute pathogen#infect()
 set lines=50 columns=150
@@ -21,9 +11,9 @@ set showmode
 set showmatch
 
 syntax on
-colorscheme morning
+colorscheme murphy
 "set guifont=Courier\ 10\ Pitch\ 12
-set guifont=Monospace\ 10
+set guifont=Monospace\ 11
 "set guifontset=-*-*-medium-r-normal--16-*-*-*-c-*-*-*
 
 set nobackup
@@ -37,9 +27,9 @@ set hidden
 "-------------------------------------------------------
 " replace tab with space
 "-------------------------------------------------------
-set shiftwidth=2
+set shiftwidth=2 
 set sts=2
-set tabstop=2
+set tabstop=8
 set expandtab
 
 "-------------------------------------------------------
@@ -69,7 +59,7 @@ filetype indent on
 set cindent
 set smartindent
 set autoindent
-set ai!
+"set ai!
 
 "-------------------------------------------------------
 " when open a file, return to the last modified place.
@@ -151,6 +141,14 @@ inoremap <C-l> <Right>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap begin begin<CR>end<ESC>O<SPACE><SPACE>
+
 "execute pathogen#infect()
 "runtime bundle/vim-pathogen-master/autoload/pathogen.vim
 ""runtime bundle/tabular-master/autoload/tabular.vim
@@ -159,17 +157,19 @@ inoremap <C-k> <Up>
  set cmdheight=3
 
 "height ligth cusor
-set bg=light
+"set bg=light
 "set cursorline
 set cursorcolumn
  
 "highlight CursorLine cterm=none ctermbg=236
 highlight CursorColumn cterm=none ctermbg=236
+highlight Cursor guifg=red guibg=blue
+highlight LineNr guifg=DimGrey
 
-let g:indent_guides_enable_on_vim_startup = 1 
-let g:indent_guides_start_level = 1           
-let g:indent_guides_guide_size = 1            
-let g:indent_guides_tab_guides = 0            
+"let g:indent_guides_enable_on_vim_startup = 1 
+"let g:indent_guides_start_level = 1           
+"let g:indent_guides_guide_size = 1            
+"let g:indent_guides_tab_guides = 0            
 
 " window max
 "if has('win32')    
@@ -185,5 +185,10 @@ let g:indent_guides_tab_guides = 0
 
 set gcr=a:blinkon0
 
+
 set tags+=$REPO_PATH/TAGS
+set tags+=~/TAGS-uvm-1.1
 nnoremap <C-]> :ts <C-R><C-W><CR>
+
+set fdm=indent
+highlight Folded guibg=black guifg=DarkGrey ctermfg=4 ctermbg=7
