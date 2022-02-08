@@ -1,4 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "execute pathogen#infect()
 set lines=50 columns=150
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,17 +143,18 @@ inoremap <C-k> <Up>
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {}<ESC>i
-inoremap < <><ESC>i
+"inoremap < <><ESC>i
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
-inoremap begin begin<CR>end<ESC>O<SPACE><SPACE>
+"inoremap begin begin<CR>end<ESC>O<SPACE><SPACE>
+inoremap begin begin<CR>end<ESC>O
 
 "execute pathogen#infect()
 "runtime bundle/vim-pathogen-master/autoload/pathogen.vim
 ""runtime bundle/tabular-master/autoload/tabular.vim
 "runtime bundle/tabular-master/autoload/tabular.vim
 
- set cmdheight=3
+set cmdheight=3
 
 "height ligth cusor
 "set bg=light
